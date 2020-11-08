@@ -1,0 +1,32 @@
+{
+    "name": "Only Emoji SERP",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "Show only google results with emojis",
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "browser_action": {
+        "default_title": "Visit project website"
+    },
+    "background": {
+        "scripts": [
+            "action.js"
+        ]
+    },
+    "permissions": [
+        "https://www.google.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.google.com/*"
+            ],
+            "js": [
+                "background.js"
+            ]
+        }
+    ]
+}
