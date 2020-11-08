@@ -46,9 +46,9 @@ var items_found = document.querySelectorAll(".noemoji_found");
 var total_found = items_found.length;
 if (total_found) {
     var btn_undo = document.createElement('span');
-    btn_undo.style.cssText = 'font-weight:bold;font-size:15px;text-align:center;border:1px black solid;padding:10px 20px;background:orange;color:black;position:fixed;bottom:0;right:0;cursor:pointer;';
+    btn_undo.style.cssText = 'font-weight:bold;font-size:15px;text-align:center;border:1px black solid;padding:10px 20px;background:orange;color:black;position:fixed;bottom:0;right:250px;cursor:pointer;';
     btn_undo.innerHTML = '✖ Undo emoji filter (' + total_found + ')';
-    btn_undo.id = 'btn_undo';
+    btn_undo.id = 'btn_undo_noemoji';
     document.body.appendChild(btn_undo);
 
     btn_undo.onclick = function () {
@@ -58,7 +58,7 @@ if (total_found) {
                 items_found[j].style.display = '';
             }
         }
-        document.getElementById('btn_undo').remove();
+        document.getElementById('btn_undo_noemoji').remove();
         window.scrollTo(0, 0);
     };
 }
